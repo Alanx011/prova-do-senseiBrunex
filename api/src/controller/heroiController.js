@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { inserirHeroi } from "../repository/HeroiRepository.js";
+import { inserirHeroi, listarHerois } from "../repository/HeroiRepository.js";
 
 const server = Router();
 
 server.get('/superHeroi', async (req,resp) => {
     try{
-        const r = await listarHerois();
-        resp.send(r);
+        const resposta = await listarHerois();
+        resp.send(resposta);
     }catch(err) {
         resp.status(400).send({
             erro: err.message
