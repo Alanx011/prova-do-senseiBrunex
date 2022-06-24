@@ -4,11 +4,13 @@ import { con } from "./connection.js";
 
     export async function listarHerois() {
         const comando =
-        `SELECT  id_super_heroi              id,
-                nm_super_heroi              nome,
-                ds_super_poder              superPoder,
-                bt_ voa                     voa
-        FROM    tb_super_heroi`
+    
+
+         `SELECT id_super_heroi       id,
+        nm_super_heroi       nome,
+        ds_super_poder       superPoder,
+        bt_voa 		voa
+        FROM tb_super_heroi;  ` 
 
     const [linhas] = await con.query(comando);
     return linhas;

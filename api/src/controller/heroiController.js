@@ -3,6 +3,8 @@ import { inserirHeroi, listarHerois } from "../repository/HeroiRepository.js";
 
 const server = Router();
 
+  
+
 server.get('/superHeroi', async (req,resp) => {
     try{
         const resposta = await listarHerois();
@@ -13,6 +15,7 @@ server.get('/superHeroi', async (req,resp) => {
         })
     }
 })
+
     server.post('/Heroi' , async (req, resp) => {
         try{
             const novoHeroi = req.body;
